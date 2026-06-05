@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const standingsRoutes = require("./routes/standings");
 
 const app = express();
+
 
 app.use(express.json());
 app.use(cors());
@@ -15,6 +17,7 @@ app.get("/", (req, res) => {
 
 app.use("/teams", teamsRoutes);
 app.use("/matches", matchesRoutes);
+app.use("/standings", standingsRoutes);
 
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
