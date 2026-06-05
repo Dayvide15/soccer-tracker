@@ -1,13 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
 app.use(express.json());
+app.use(cors());
 
 const teamsRoutes = require("./routes/teams");
 const matchesRoutes = require("./routes/matches");
 
 app.get("/", (req, res) => {
-  res.send("Soccer Tracker API running ⚽");
+  res.send("Soccer Tracker API running ");
 });
 
 app.use("/teams", teamsRoutes);
